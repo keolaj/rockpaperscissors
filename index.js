@@ -41,8 +41,9 @@ document.querySelector(".button-section").childNodes.forEach((node) => {
 	node.addEventListener("click", () => {
 		let winText = runGame(node.textContent, getComputerChoice());
 		let textSection = document.querySelector(".text-section");
-		let text = textSection.textContent;
-		textSection.textContent = text + '\n' + winText;
+		let newEl = document.createElement("p");
+		newEl.textContent = winText;
+		textSection.appendChild(newEl)
 
 	})
 })
